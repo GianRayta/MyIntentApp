@@ -24,7 +24,7 @@
         android:text="@string/move_with_data" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/PindahActivitywObjek"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"

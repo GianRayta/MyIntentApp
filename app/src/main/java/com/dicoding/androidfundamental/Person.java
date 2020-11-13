@@ -77,7 +77,7 @@ public class Person implements Parcelable {
         this.email = email;
     }
 
-    public String getCity () {
+    public String getCity(String jekardah) {
         return city;
     }
 

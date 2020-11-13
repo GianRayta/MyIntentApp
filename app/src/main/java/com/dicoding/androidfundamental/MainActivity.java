@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,9 +17,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnMoveactivity = findViewById(R.id.PindahActivity);
         Button btnMovewithdataActivity = findViewById(R.id.PindahActivitywData);
+        Button btnMovewithObjectActivity = findViewById(R.id.PindahActivitywObjek);
 
+        btnMovewithObjectActivity.setOnClickListener(this);
         btnMovewithdataActivity.setOnClickListener(this);
         btnMoveactivity.setOnClickListener(this);
+
+
 
     }
 
@@ -35,6 +40,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 movedataintent.putExtra(MoveWithDataActivity.EXTRA_AGE,5);
                 startActivity(movedataintent);
                 break;
+            case R.id.PindahActivitywObjek:
+                Person person = new Person();
+                person.setName("Gian");
+                person.setAge(20);
+                person.setEmail("ajdhadj@yahui.com");
+                person.getCity("Jekardah");
+                Intent moveobject = new Intent(MainActivity.this,MovewithObjectActivity.class);
+                moveobject.putExtra(MovewithObjectActivity.EXTRA_PERSON,person);
+                startActivity(moveobject);
+                break;
+
         }
     }
 }
