@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 person.setName("Gian");
                 person.setAge(20);
                 person.setEmail("ajdhadj@yahui.com");
-                person.getCity("Jekardah");
+                person.setCity("Jekardah");
                 Intent moveobject = new Intent(MainActivity.this,MovewithObjectActivity.class);
                 moveobject.putExtra(MovewithObjectActivity.EXTRA_PERSON,person);
                 startActivity(moveobject);

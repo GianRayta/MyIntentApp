@@ -16,7 +16,7 @@ public class MovewithObjectActivity extends AppCompatActivity {
         TextView TvObject = findViewById(R.id.tv_objectdata);
 
         Person person = getIntent().getParcelableExtra(EXTRA_PERSON);
-        String text = "Name : " + person.getName() + " Age : " + person.getAge() + " Email : " + person.getEmail() + " City : " + person.getCity("Jekardah");
+        String text = "Name : " + person.getName() + "\nAge : " + person.getAge() + "\nEmail : " + person.getEmail() + "\nCity : " + person.getCity("Jekardah");
         TvObject.setText(text);
     }
 }
