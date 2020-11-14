@@ -3,6 +3,7 @@ package com.dicoding.androidfundamental;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,10 +19,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnMoveactivity = findViewById(R.id.PindahActivity);
         Button btnMovewithdataActivity = findViewById(R.id.PindahActivitywData);
         Button btnMovewithObjectActivity = findViewById(R.id.PindahActivitywObjek);
+        Button btnDialNUmber = findViewById(R.id.btn_dial_number);
 
         btnMovewithObjectActivity.setOnClickListener(this);
         btnMovewithdataActivity.setOnClickListener(this);
         btnMoveactivity.setOnClickListener(this);
+        btnDialNUmber.setOnClickListener(this);
 
 
 
@@ -49,6 +52,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent moveobject = new Intent(MainActivity.this,MovewithObjectActivity.class);
                 moveobject.putExtra(MovewithObjectActivity.EXTRA_PERSON,person);
                 startActivity(moveobject);
+                break;
+            case R.id.btn_dial_number:
+                String number = "08123654321";
+                Intent dialnumber = new Intent(Intent.ACTION_DIAL, Uri.parse("tel: "+number));
+                startActivity(dialnumber);
                 break;
 
         }
