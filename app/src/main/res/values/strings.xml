@@ -15,4 +15,6 @@
     <string name="data_received">Data Diterima</string>
     <string name="object_received">Object Diterima</string>
     <string name="this_is_moveactivity">Ini MoveActivity</string>
+    <string name="please_choose_your_favorite_number">Please choose your favorite number :</string>
+    <string name="pilih">Pilih</string>
 </resources>

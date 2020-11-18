@@ -7,8 +7,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    TextView TvResult;
+    private int REQUEST_CODE = 100 ;
+
 
 
     @Override
@@ -20,11 +24,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnMovewithdataActivity = findViewById(R.id.PindahActivitywData);
         Button btnMovewithObjectActivity = findViewById(R.id.PindahActivitywObjek);
         Button btnDialNUmber = findViewById(R.id.btn_dial_number);
+        Button btnResultfromActivity = findViewById(R.id.btn_movewresult);
 
         btnMovewithObjectActivity.setOnClickListener(this);
         btnMovewithdataActivity.setOnClickListener(this);
         btnMoveactivity.setOnClickListener(this);
         btnDialNUmber.setOnClickListener(this);
+        btnResultfromActivity.setOnClickListener(this);
+
+        TvResult = findViewById(R.id.tv_result_from_activity);
 
 
 
@@ -58,7 +66,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent dialnumber = new Intent(Intent.ACTION_DIAL, Uri.parse("tel: "+number));
                 startActivity(dialnumber);
                 break;
+            case R.id.btn_movewresult:
+                Intent moveForResultintent = new Intent(MainActivity.this,MoreForResultActivity.class);
+                startActivityForResult(moveForResultintent,REQUEST_CODE);
+                break;
+
+
 
         }
+    }
+
+    @Override
+    protected void onActivityResult (int requestCode , int resultCode, Intent data) {
+        super.onActivityResult(requestCode,resultCode,data);
+
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == MoreForResultActivity.RESULT_CODE) {
+                int selectValue = data.getIntExtra(MoreForResultActivity.EXTRA_SELECTED_VALUE,0);
+                TvResult.setText(String.format("Hasil : %s" ,selectValue ));
+            }
+
+        }
+
     }
 }

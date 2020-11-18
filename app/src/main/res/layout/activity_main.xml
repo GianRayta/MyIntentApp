@@ -37,5 +37,17 @@
         android:padding="16dp"
         android:text="@string/dial_number" />
 
+    <Button
+        android:id="@+id/btn_movewresult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/move_with_result" />
+
+    <TextView
+        android:id="@+id/tv_result_from_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/result_from_activity" />
+
 
 </LinearLayout>
